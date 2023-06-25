@@ -98,7 +98,6 @@ var taskIncomplete = function () {
 //Add event handler to addTask function.
 addButton.addEventListener("click", addTask);
 var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
-  console.log(taskListItem, checkBoxEventHandler);
   // select listitems chidlren
   var checkBox = taskListItem.querySelector('input[type="checkbox"]');
   var deleteButton = taskListItem.querySelector("button.delete");
@@ -110,14 +109,14 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   checkBox.onchange = checkBoxEventHandler;
 };
 
-//cycle over incompleteTaskHolder ul list items
+//cycle over incompleteTaskList ul list items
 for (var i = 0; i < incompleteTasksList.children.length; i++) {
-  //bind events to list item's children (taskCompleted)
+  //bind events to list item's children for taskCompleted
   bindTaskEvents(incompleteTasksList.children[i], taskCompleted);
 }
 
-//cycle over completedTaskHolder ul list items
+//cycle over completedTaskList ul list items
 for (var i = 0; i < completeTasksList.children.length; i++) {
-  //bind events to list item's children (taskCompleted)
+  //bind events to list item's children for task incomplete
   bindTaskEvents(completeTasksList.children[i], taskIncomplete);
 }
