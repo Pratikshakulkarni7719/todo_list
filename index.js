@@ -3,8 +3,8 @@ let totalTaskCount = document.getElementById("test");
 let taskInput = document.getElementById("add-task"); // add new-task
 let incompleteTasksList = document.getElementById("incomplete-tasks"); //list of incomplete task
 let completeTasksList = document.getElementById("completed-tasks"); //list of complete task
-let emptyList = document.getElementById("no-list-display"); //empty list
-let addButton = document.getElementById("add-button-id"); // disable add button
+let emptyList = document.getElementById("no-list-display"); //empty list.
+let addButton = document.getElementById("add-button-id"); // disable add button.
 
 totalTaskCount.innerText = 2; //default task count.
 
@@ -28,6 +28,11 @@ let createNewElement = function (taskString) {
   listItem.appendChild(label);
   listItem.appendChild(deleteButton);
   return listItem;
+};
+
+//This event will occcurs when key is pressed on first input field.
+var keypressEvent = function () {
+  addButton.removeAttribute("disabled");
 };
 
 //Add new task in list.
@@ -71,11 +76,6 @@ var deleteTask = function () {
     document.getElementById("all-task-wrapper").className = "displayList";
     emptyList.innerHTML = "No todos to display..!! Please add todos";
   }
-};
-
-//This event will occcurs when key is pressed on first input field.
-var keypressEvent = function () {
-  addButton.removeAttribute("disabled");
 };
 
 //Task complete.
