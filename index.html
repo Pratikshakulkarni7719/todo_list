@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Todo App</title>
+    <link
+      rel="stylesheet"
+      href="./assets/index.css"
+      type="text/css"
+      media="screen"
+      charset="utf-8"
+    />
+  </head>
+  <body>
+    <!-- Todo's header -->
+    <h1 class="todo-header">Todo List</h1>
+
+    <!-- Todos's container wrapper -->
+    <div class="container">
+      <label for="add-task">Add Task</label>
+
+      <!-- Add task  -->
+      <div class="add-task-wrapper">
+        <input
+          id="add-task"
+          type="text"
+          placeholder="Type your todos here..."
+          onkeypress="keypressEvent()"
+        />
+        <button id="add-button-id" disabled>Add</button>
+      </div>
+
+      <!-- Total item count -->
+      <p class="reamining-todo-count">Total Tasks: <span id="test"></span></p>
+      <p id="no-list-display"></p>
+
+      <!-- List of all todo's -->
+
+      <div id="all-task-wrapper">
+        <!-- All incomplete tasks -->
+        <h3>Todo's</h3>
+        <ul id="incomplete-tasks">
+          <li>
+            <input type="checkbox" />
+            <label>Go Temple</label>
+            <button class="delete">Delete</button>
+          </li>
+        </ul>
+
+        <!-- All completed tasks -->
+        <h3>Completed Tasks</h3>
+        <p id="empty-complete-task"></p>
+        <ul id="completed-tasks">
+          <li>
+            <input type="checkbox" checked="" />
+            <label>Cook food</label>
+            <button class="delete">Delete</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
